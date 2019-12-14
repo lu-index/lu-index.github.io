@@ -43,6 +43,7 @@
 			var canvas = document.querySelector("#canvas");
 			var ctx = canvas.getContext("2d");
 
+
 			var game = {
 				stageW: 640,
 				stageH: 640,
@@ -67,7 +68,7 @@
 
 			// 圆心坐标 半径 颜色 是否填充
 			function drawCircle(x, y, r, color, fill) {
-				ctx.beginPath(); //绘制一条路径
+				ctx.beginPath();
 				ctx.arc(x, y, r, 0, 2 * Math.PI);
 				ctx.closePath();
 				if (fill) {
@@ -80,7 +81,7 @@
 			}
 
 			// 准备场景
-			//开始页面小球
+
 			var a = {
 				r: 50,
 				maxR: 50,
@@ -154,70 +155,71 @@
 				this.over = false;
 			}
 			// 球球原始位置生成
-			// Boll.prototype.generateCoord = function() {
-			// 	this.x = -this.r;
-			// 	// game.stageW + this.r
-			// 	// 随机数代表方向
-			// 	var num = randomNum(0, 3);
-			// 	switch (num) {
-			// 		case 0:
-			// 			// 从上面
-			// 			this.x = randomNum(-this.r, game.stageW + this.r);
-			// 			this.y = -this.r;
-			// 			break;
-			// 		case 1:
-			// 			// 从右面
-			// 			this.x = game.stageW + this.r;
-			// 			this.y = randomNum(-this.r, game.stageH + this.r);
+			Boll.prototype.generateCoord = function() {
+				this.x = -this.r;
+				// game.stageW + this.r
+				// 随机数代表方向
+				var num = randomNum(0, 3);
+				switch (num) {
+					case 0:
+						// 从上面
+						this.x = randomNum(-this.r, game.stageW + this.r);
+						this.y = -this.r;
+						break;
+					case 1:
+						// 从右面
+						this.x = game.stageW + this.r;
+						this.y = randomNum(-this.r, game.stageH + this.r);
 
-			// 			break;
-			// 		case 2:
-			// 			// 从下面
-			// 			this.x = randomNum(-this.r, game.stageW + this.r);
-			// 			this.y = game.stageH + this.r;
-			// 			break;
-			// 		case 3:
-			// 			// 左边
-			// 			this.x = -this.r;
-			// 			this.y = randomNum(-this.r, game.stageH + this.r);
-			// 			break;
-			// 	}
-			// };
-			// var bollspeed = 3
-			// // 球球速度生成
-			// Boll.prototype.generateSpeed = function() {
-			// 	if (this.x > game.stageW) {
-			// 		this.sx = -randomFloor(0, bollspeed);
-			// 		this.sy = randomFloor(-bollspeed, bollspeed);
-			// 	}
-			// 	if (this.x < 0) {
-			// 		this.sx = randomFloor(0, bollspeed);
-			// 		this.sy = randomFloor(-bollspeed, bollspeed);
-			// 	}
-			// 	if (this.y > game.stageH) {
-			// 		this.sx = randomFloor(-bollspeed, bollspeed);
-			// 		this.sy = -randomFloor(0, bollspeed);
-			// 	}
-			// 	if (this.y < 0) {
-			// 		this.sx = randomFloor(-bollspeed, bollspeed);
-			// 		this.sy = randomFloor(0, bollspeed);
-			// 	}
-			// };
+						break;
+					case 2:
+						// 从下面
+						this.x = randomNum(-this.r, game.stageW + this.r);
+						this.y = game.stageH + this.r;
+						break;
 
-			// // 球球移动
-			// Boll.prototype.move = function() {
-			// 	this.x = this.x + this.sx;
-			// 	this.y = this.y + this.sy;
-			// };
+					case 3:
+						// 左边
+						this.x = -this.r;
+						this.y = randomNum(-this.r, game.stageH + this.r);
+						break;
+				}
+			};
+			var bollspeed = 3
+			// 球球速度生成
+			Boll.prototype.generateSpeed = function() {
+				if (this.x > game.stageW) {
+					this.sx = -randomFloor(0, bollspeed);
+					this.sy = randomFloor(-bollspeed, bollspeed);
+				}
+				if (this.x < 0) {
+					this.sx = randomFloor(0, bollspeed);
+					this.sy = randomFloor(-bollspeed, bollspeed);
+				}
+				if (this.y > game.stageH) {
+					this.sx = randomFloor(-bollspeed, bollspeed);
+					this.sy = -randomFloor(0, bollspeed);
+				}
+				if (this.y < 0) {
+					this.sx = randomFloor(-bollspeed, bollspeed);
+					this.sy = randomFloor(0, bollspeed);
+				}
+			};
 
-			// // 球球超出
-			// Boll.prototype.checkOver = function() {
-			// 	var rightOver = this.x > game.stageW + this.r;
-			// 	var leftOver = this.x < -this.r;
-			// 	var bottomOver = this.y > game.stageH + this.r;
-			// 	var topOver = this.y < -this.r;
-			// 	this.over = rightOver || leftOver || topOver || bottomOver;
-			// };
+			// 球球移动
+			Boll.prototype.move = function() {
+				this.x = this.x + this.sx;
+				this.y = this.y + this.sy;
+			};
+
+			// 球球超出
+			Boll.prototype.checkOver = function() {
+				var rightOver = this.x > game.stageW + this.r;
+				var leftOver = this.x < -this.r;
+				var bottomOver = this.y > game.stageH + this.r;
+				var topOver = this.y < -this.r;
+				this.over = rightOver || leftOver || topOver || bottomOver;
+			};
 
 			// 我方球球构造器
 			function OurBoll() {
@@ -234,139 +236,139 @@
 				};
 			}
 
-			// // 创建我方小球
-			var o = new OurBoll(); 
-			// //  drawCircle(o.x, o.y, o.r, o.color, true);
+			// 创建我方小球
+			var o = new OurBoll();
+			//  drawCircle(o.x, o.y, o.r, o.color, true);
 
-			// // 所有球球数组
-			// var segements = [];
-			// // 帧数
-			// var frames = 0;
-			// var score = 0;
+			// 所有球球数组
+			var segements = [];
+			// 帧数
+			var frames = 0;
+			var score = 0;
 
-			// // 随机数
-			// function randomNum(m, n) {
-			// 	return Math.round(Math.random() * (n - m)) + m;
-			// }
-			// function randomFloor(m, n) {
-			// 	return Math.random() * (n - m) + m;
-			// }
+			// 随机数
+			function randomNum(m, n) {
+				return Math.round(Math.random() * (n - m)) + m;
+			}
+			function randomFloor(m, n) {
+				return Math.random() * (n - m) + m;
+			}
 
-			// function checkCrash(boll) {
-			// 	// 勾股定理 毕达哥拉斯定理
-			// 	var s = Math.sqrt((boll.x - o.x) * (boll.x - o.x) + (boll.y - o.y) * (boll.y - o.y));
-			// 	if (s < boll.r + o.r && !boll.over) {
-			// 		console.log("xx");
-			// 		return true;
-			// 	}
-			// }
+			function checkCrash(boll) {
+				// 勾股定理 毕达哥拉斯定理
+				var s = Math.sqrt((boll.x - o.x) * (boll.x - o.x) + (boll.y - o.y) * (boll.y - o.y));
+				if (s < boll.r + o.r && !boll.over) {
+					console.log("xx");
+					return true;
+				}
+			}
 
-			// // 测试构造器
-			// // var x = new Boll(5, 0);
-			// // x.generateCoord();
-			// // x.generateSpeed()
-			// // drawCircle(x.x, x.y, x.r, x.color, true);
+			// 测试构造器
+			// var x = new Boll(5, 0);
+			// x.generateCoord();
+			// x.generateSpeed()
+			// drawCircle(x.x, x.y, x.r, x.color, true);
 
-			// // 游戏开始
-			// function start() {
-			// 	// console.log("游戏开始");
-			// 	// 增加帧数
-			// 	frames++;
+			// 游戏开始
+			function start() {
+				// console.log("游戏开始");
+				// 增加帧数
+				frames++;
 
-			// 	// 更新我方小球 圆环动画
-			// 	updateZoom(o.loop);
-			// 	// 画出实心球 和 圆环
-			// 	drawCircle(o.x, o.y, o.r, o.color, true);
-			// 	drawCircle(o.x, o.y, o.loop.r, o.loop.color, false);
+				// 更新我方小球 圆环动画
+				updateZoom(o.loop);
+				// 画出实心球 和 圆环
+				drawCircle(o.x, o.y, o.r, o.color, true);
+				drawCircle(o.x, o.y, o.loop.r, o.loop.color, false);
 
-			// 	// 生成新球球
-			// 	if (!(frames % 10)) {
-			// 		var newBoll = new Boll(o.r - 4, o.r + 20);
-			// 		newBoll.generateCoord();
-			// 		newBoll.generateSpeed();
+				// 生成新球球
+				if (!(frames % 10)) {
+					var newBoll = new Boll(o.r - 4, o.r + 20);
+					newBoll.generateCoord();
+					newBoll.generateSpeed();
 
-			// 		segements.push(newBoll);
-			// 	}
+					segements.push(newBoll);
+				}
 
-			// 	// 遍历所有敌方
-			// 	segements.forEach(function(boll, index) {
-			// 		// 移动所有 小球
-			// 		boll.move();
-			// 		// 根据新位置画
-			// 		drawCircle(boll.x, boll.y, boll.r, boll.color, true);
+				// 遍历所有敌方
+				segements.forEach(function(boll, index) {
+					// 移动所有 小球
+					boll.move();
+					// 根据新位置画
+					drawCircle(boll.x, boll.y, boll.r, boll.color, true);
 
-			// 		// 检测碰撞
-			// 		if (checkCrash(boll)) {
-			// 			// 判断半径
-			// 			if (boll.r > o.r) {
-			// 				// 游戏结束
-			// 				gameover();
-			// 			} else {
-			// 				// 标记死亡（超出）
-			// 				boll.die = true;
-			// 				console.log(boll);
+					// 检测碰撞
+					if (checkCrash(boll)) {
+						// 判断半径
+						if (boll.r > o.r) {
+							// 游戏结束
+							gameover();
+						} else {
+							// 标记死亡（超出）
+							boll.die = true;
+							console.log(boll);
 
-			// 				// 我方球球半径增加 圆环半径也要增加
-			// 				var addR = boll.r / 10;
-			// 				// 不要直接加吃掉的小球半径 太大了
-			// 				o.r += addR;
-			// 				o.loop.r += addR;
-			// 				o.loop.minR += addR;
-			// 				o.loop.maxR += addR;
+							// 我方球球半径增加 圆环半径也要增加
+							var addR = boll.r / 10;
+							// 不要直接加吃掉的小球半径 太大了
+							o.r += addR;
+							o.loop.r += addR;
+							o.loop.minR += addR;
+							o.loop.maxR += addR;
 
-			// 				// 增加score
-			// 				score++;
-			// 			}
-			// 		}
+							// 增加score
+							score++;
+						}
+					}
 
-			// 		// 检测标记超出
-			// 		boll.checkOver();
-			// 	});
+					// 检测标记超出
+					boll.checkOver();
+				});
 
-			// 	// 删除数组里面已经超出的球球
-			// 	segements.forEach(function(boll, index) {
-			// 		if (boll.over || boll.die) {
-			// 			segements.splice(index, 1);
-			// 			// console.log('shanchu');
-			// 		}
-			// 	});
+				// 删除数组里面已经超出的球球
+				segements.forEach(function(boll, index) {
+					if (boll.over || boll.die) {
+						segements.splice(index, 1);
+						// console.log('shanchu');
+					}
+				});
 
-			// 	// 更新得分
-			// 	ctx.font = "30px Arial";
-			// 	ctx.fillStyle = "#333333";
-			// 	ctx.fillText(score, 10, 50);
-			// }
+				// 更新得分
+				ctx.font = "30px Arial";
+				ctx.fillStyle = "#333333";
+				ctx.fillText(score, 10, 50);
+			}
 
-			// function gameover() {
-			// 	clearInterval(id);
-			// 	if (localStorage.score) {
-			// 		var oldArr = JSON.parse(localStorage.score);
-			// 		// 循环数组
-			// 		for (var i = 0; i < oldArr.length; i++) {
-			// 			// 检查每一个得分数组对象
-			// 			for (key in oldArr[i]) {
-			// 				// console.log(key);
-			// 				if (key == score) {
-			// 					oldArr[i][key]++;
-			// 					localStorage.score = JSON.stringify(oldArr);
-			// 					return;
-			// 				}
-			// 			}
-			// 		}
+			function gameover() {
+				clearInterval(id);
+				if (localStorage.score) {
+					var oldArr = JSON.parse(localStorage.score);
+					// 循环数组
+					for (var i = 0; i < oldArr.length; i++) {
+						// 检查每一个得分数组对象
+						for (key in oldArr[i]) {
+							// console.log(key);
+							if (key == score) {
+								oldArr[i][key]++;
+								localStorage.score = JSON.stringify(oldArr);
+								return;
+							}
+						}
+					}
 
-			// 		var newScore = {};
-			// 		newScore[score] = 1;
-			// 		oldArr.push(newScore);
-			// 		localStorage.score = JSON.stringify(oldArr);
+					var newScore = {};
+					newScore[score] = 1;
+					oldArr.push(newScore);
+					localStorage.score = JSON.stringify(oldArr);
 
-			// 	} else {
-			// 		// console.log("第一次");
-			// 		var newScore = {};
-			// 		newScore[score] = 1;
+				} else {
+					// console.log("第一次");
+					var newScore = {};
+					newScore[score] = 1;
 
-			// 		localStorage.score = JSON.stringify([newScore]);
-			// 	}
-			// }
+					localStorage.score = JSON.stringify([newScore]);
+				}
+			}
 
 			// 游戏主体
 			var id = setInterval(function() {
