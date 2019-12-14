@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+       
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="500"></canvas>
+		<script>
+			var canvas = document.querySelector("#canvas");
+			var ctx = canvas.getContext("2d");
+
+			// 开始新的路径
+			ctx.beginPath();
+			// 描边色
+			ctx.strokeStyle = "green";
+			// 线宽
+			ctx.lineWidth = 40;
+
+			// 左边手
+			// 线帽
+			ctx.lineCap = "round";
+
+			// 下笔
+			ctx.moveTo(120, 160);
+			// 起笔
+			ctx.lineTo(120, 280);
+
+			// 右边的手
+			// 下笔
+			ctx.moveTo(380, 160);
+			// 起笔
+			ctx.lineTo(380, 280);
+
+			// 左边的脚
+			// 下笔
+			ctx.moveTo(200, 350);
+			// 起笔
+			ctx.lineTo(200, 420);
+
+			// 右边的脚
+			// 下笔
+			ctx.moveTo(300, 350);
+			// 起笔
+			ctx.lineTo(300, 420);
+
+			// 描边
+			ctx.stroke();
+
+			// 画头
+			ctx.beginPath();
+			// 填充色
+			ctx.fillStyle = "green";
+
+			// 画圆
+			// 原点的x轴坐标  原点Y轴坐标  半径  起始角度  结束角度  是否逆时针旋转
+			ctx.arc(250, 140, 100, 0, -Math.PI, true);
+
+			// 闭合路径
+			// ctx.closePath();
+
+			// 填充
+			ctx.fill();
+
+			// 天线
+
+			ctx.beginPath();
+			ctx.lineWidth = 4;
+
+			ctx.moveTo(170, 20);
+			ctx.lineTo(200, 70);
+
+			ctx.moveTo(330, 20);
+			ctx.lineTo(300, 70);
+
+			ctx.stroke();
+
+			// 眼睛
+			ctx.beginPath();
+			ctx.fillStyle = "white";
+
+			ctx.arc(200, 100, 10, 0, 2 * Math.PI);
+			ctx.arc(300, 100, 10, 0, 2 * Math.PI);
+			// 填充
+			ctx.fill();
+
+			// 身体
+			ctx.beginPath();
+			ctx.fillStyle = "green";
+
+			ctx.moveTo(150, 150);
+
+			ctx.lineTo(350, 150);
+			ctx.lineTo(350, 300);
+
+			// 控制点1的x轴下标  控制点1的y轴下标, 结束点
+			// 右臀
+			ctx.arcTo(350, 350, 300, 350, 40);
+
+			ctx.lineTo(300, 350);
+			// 左臀
+			ctx.arcTo(150, 350, 150, 300, 40);
+
+			ctx.closePath();
+
+			ctx.fill();
+		</script>
+	</body>
+</html>

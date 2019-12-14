@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<style>
+			.stage {
+			}
+
+			.stage .main {
+				width: 400px;
+				float: left;
+				background: lightblue;
+				position: relative;
+				/* overflow: hidden; */
+			}
+			.stage .main img {
+				width: 100%;
+				display: block;
+				/* vertical-align: middle; */
+			}
+			.stage .main .mask {
+				width: 200px;
+				height: 200px;
+				background: rgba(0, 0, 0, 0.5);
+				position: absolute;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				/* 鼠标穿透 */
+			}
+			.stage .zoom {
+				float: left;
+				width: 400px;
+				height: 400px;
+				margin-left: 10px;
+				background: url("./images/p14.jpg") no-repeat;
+				background-size: 200% auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stage">
+			<div class="main">
+				<img src="images/p14.jpg" alt="" />
+				<div class="mask"></div>
+			</div>
+			<div class="zoom"></div>
+		</div>
+		<!-- <script>
+			var main = document.querySelector(".main");
+			var mask = document.querySelector(".mask");
+			var zoom = document.querySelector(".zoom");
+
+			main.onmousemove = function(n) {
+				var x = n.offsetX - 100;
+				var y = n.offsetY - 100;
+// console.log(n.offsetX,n.offsetY)
+				x = (x > 200 ) ? 200 : x;
+				y = (y > 200 ) ? 200 : y;
+				x = (x < 0 ) ? 0 : x;
+				y = ( y < 0 ) ? 0 : y;
+
+				mask.style.left = x + "px";
+				mask.style.top = y + "px";
+
+				zoom.style.backgroundPositionX = x * -2 + "px";
+				zoom.style.backgroundPositionY = y * -2 + "px";
+			};
+		</script> -->
+
+		<SCript>
+			$('.stage').mousemove(function (move) {
+				var x = (move.pageX || move.clientX) - $(this).offset().left;
+				var y = (move.pageY || move.clientY) - $(this).offset().top;
+				var x = move.offsetX - 100;
+				var y = move.offsetY - 100;
+				x = (x > 200 ) ? 200 : x;
+				y = (y > 200 ) ? 200 : y;
+				x = (x < 0 ) ? 0 : x;
+				y = ( y < 0 ) ? 0 : y;
+
+					$('.stage .mask').css({left:x+'px'})
+					$('.stage .mask').css({top:y+'px'})
+					$('.zoom').css({backgroundPositionX :x * -2 + "px"})
+				$('.zoom').css({backgroundPositionY :y * -2 + "px"})
+
+
+			})
+		</SCript>
+	</body>
+</html>

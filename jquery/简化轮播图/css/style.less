@@ -1,0 +1,77 @@
+.box{
+    width: 600px;
+    margin: 0 auto;
+    background: orange;
+    overflow: hidden;
+    position: relative;
+    .content{
+        width: 3600px;
+        height: 300px;
+        // transition: all 1s;
+        img{
+            width: 600px;
+			height: 300px;
+			float: left;
+            vertical-align: middle;
+        }
+    }
+    .prev{
+        position: absolute;
+			left: 0;
+			top: 40%;
+			text-align: center;
+            cursor: pointer;
+            width: 30px;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.4);
+            
+            img{
+                width: 50%;
+                height: 60%;
+                margin-top: 15px;
+            }
+            &:hover{
+                background: rgba(0, 0, 0, 0.6);
+            } 
+    }
+    .next{
+        position: absolute;
+			right: 0;
+			top: 40%;
+			text-align: center;
+            cursor: pointer;
+            width: 30px;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.4);
+            transition: all 0.3s;
+            img{
+                width: 50%;
+                height: 60%;
+                margin-top: 15px;
+            }
+           &:hover{
+                background: rgba(0, 0, 0, 0.6);
+            } 
+    }
+    .dot{
+        position: absolute;
+        bottom: 0;
+        left: 45%;
+        width: 600px;
+        height: 20px;
+        // background: royalblue;
+        span{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: white;           
+            // margin: 0 5px;
+            right: 50%;
+             margin-right: 5px;
+             cursor: pointer;
+            &.active{
+                background: black;
+            }
+        }
+    }
+}

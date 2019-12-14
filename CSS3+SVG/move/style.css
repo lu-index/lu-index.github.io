@@ -1,0 +1,1127 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  background: #03002e;
+}
+html h1,
+body h1 {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+html .csscontent,
+body .csscontent {
+  max-width: 600px;
+  margin: 0px auto;
+  padding: 5px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+html .csscontent .column,
+body .csscontent .column {
+  width: calc(33.33% - 10px);
+  height: 170px;
+  background-color: #040038;
+  margin: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .csscontent .column .container,
+body .csscontent .column .container {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+html .csscontent .column .container .shape,
+body .csscontent .column .container .shape {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+}
+html .csscontent .column .container .shape1,
+body .csscontent .column .container .shape1 {
+  left: 0;
+  background-color: #5c6bc0;
+}
+html .csscontent .column .container .shape2,
+body .csscontent .column .container .shape2 {
+  right: 0;
+  background-color: #8bc34a;
+}
+html .csscontent .column .container .shape3,
+body .csscontent .column .container .shape3 {
+  bottom: 0;
+  background-color: #ffb74d;
+}
+html .csscontent .column .container .shape4,
+body .csscontent .column .container .shape4 {
+  bottom: 0;
+  right: 0;
+  background-color: #f44336;
+}
+html .csscontent .column .animation-1,
+body .csscontent .column .animation-1 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+html .csscontent .column .animation-1 .shape1,
+body .csscontent .column .animation-1 .shape1 {
+  animation: animation1shape1 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-1 .shape2,
+body .csscontent .column .animation-1 .shape2 {
+  animation: animation1shape2 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-1 .shape3,
+body .csscontent .column .animation-1 .shape3 {
+  animation: animation1shape3 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-1 .shape4,
+body .csscontent .column .animation-1 .shape4 {
+  animation: animation1shape4 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-2,
+body .csscontent .column .animation-2 {
+  transform: rotate(10deg);
+  -webkit-animation: rotation 1s infinite;
+  animation: rotation 1s infinite;
+}
+html .csscontent .column .animation-2 .shape,
+body .csscontent .column .animation-2 .shape {
+  border-radius: 5px;
+}
+html .csscontent .column .animation-2 .shape1,
+body .csscontent .column .animation-2 .shape1 {
+  animation: animation2shape1 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-2 .shape2,
+body .csscontent .column .animation-2 .shape2 {
+  animation: animation2shape2 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-2 .shape3,
+body .csscontent .column .animation-2 .shape3 {
+  animation: animation2shape3 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-2 .shape4,
+body .csscontent .column .animation-2 .shape4 {
+  animation: animation2shape4 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-3,
+body .csscontent .column .animation-3 {
+  -webkit-animation: rotation 1s infinite;
+  animation: rotation 1s infinite;
+}
+html .csscontent .column .animation-3 .shape1,
+body .csscontent .column .animation-3 .shape1 {
+  border-top-left-radius: 10px;
+  animation: animation3shape1 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-3 .shape2,
+body .csscontent .column .animation-3 .shape2 {
+  border-top-right-radius: 10px;
+  animation: animation3shape2 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-3 .shape3,
+body .csscontent .column .animation-3 .shape3 {
+  border-bottom-left-radius: 10px;
+  animation: animation3shape3 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-3 .shape4,
+body .csscontent .column .animation-3 .shape4 {
+  border-bottom-right-radius: 10px;
+  animation: animation3shape4 0.5s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-4,
+body .csscontent .column .animation-4 {
+  -webkit-animation: rotation 1s infinite;
+  animation: rotation 1s infinite;
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+html .csscontent .column .animation-4 .shape,
+body .csscontent .column .animation-4 .shape {
+  border-radius: 5px;
+}
+html .csscontent .column .animation-4 .shape1,
+body .csscontent .column .animation-4 .shape1 {
+  animation: animation4shape1 0.3s ease 0.3s infinite alternate;
+}
+html .csscontent .column .animation-4 .shape2,
+body .csscontent .column .animation-4 .shape2 {
+  animation: animation4shape2 0.3s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-4 .shape3,
+body .csscontent .column .animation-4 .shape3 {
+  animation: animation4shape3 0.3s ease 0s infinite alternate;
+}
+html .csscontent .column .animation-4 .shape4,
+body .csscontent .column .animation-4 .shape4 {
+  animation: animation4shape4 0.3s ease 0.3s infinite alternate;
+}
+html .csscontent .column .animation-5,
+body .csscontent .column .animation-5 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+html .csscontent .column .animation-5 .shape,
+body .csscontent .column .animation-5 .shape {
+  width: 15px;
+  height: 15px;
+}
+html .csscontent .column .animation-5 .shape1,
+body .csscontent .column .animation-5 .shape1 {
+  animation: animation5shape1 2s ease 0s infinite reverse;
+}
+html .csscontent .column .animation-5 .shape2,
+body .csscontent .column .animation-5 .shape2 {
+  animation: animation5shape2 2s ease 0s infinite reverse;
+}
+html .csscontent .column .animation-5 .shape3,
+body .csscontent .column .animation-5 .shape3 {
+  animation: animation5shape3 2s ease 0s infinite reverse;
+}
+html .csscontent .column .animation-5 .shape4,
+body .csscontent .column .animation-5 .shape4 {
+  animation: animation5shape4 2s ease 0s infinite reverse;
+}
+html .csscontent .column .animation-6,
+body .csscontent .column .animation-6 {
+  -webkit-animation: rotation 1s infinite;
+  animation: rotation 1s infinite;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+html .csscontent .column .animation-6 .shape,
+body .csscontent .column .animation-6 .shape {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+html .csscontent .column .animation-6 .shape1,
+body .csscontent .column .animation-6 .shape1 {
+  animation: animation6shape1 2s linear 0s infinite normal;
+}
+html .csscontent .column .animation-6 .shape2,
+body .csscontent .column .animation-6 .shape2 {
+  animation: animation6shape2 2s linear 0s infinite normal;
+}
+html .csscontent .column .animation-6 .shape3,
+body .csscontent .column .animation-6 .shape3 {
+  animation: animation6shape3 2s linear 0s infinite normal;
+}
+html .csscontent .column .animation-6 .shape4,
+body .csscontent .column .animation-6 .shape4 {
+  animation: animation6shape4 2s linear 0s infinite normal;
+}
+html .content2,
+body .content2 {
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  position: relative;
+  margin: 50px auto;
+  animation: rotate 15s infinite cubic-bezier(1, -0.75, 0.5, 1.2);
+}
+html .content2 .boxA,
+body .content2 .boxA {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotateX(90deg) translateZ(-100px);
+  background: url("images/bonfire_2x_1x.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+html .content2 .boxB,
+body .content2 .boxB {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  transform: rotateX(90deg) translateZ(100px);
+  background: url("images/coffeebagfront_003_003_1x.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+html .content2 .boxC,
+body .content2 .boxC {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  transform: rotateY(90deg) translateZ(-100px);
+  background: url("images/jellypus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+html .content2 .boxD,
+body .content2 .boxD {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  transform: rotateY(90deg) translateZ(100px);
+  background: url("images/lms.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+html .content2 .boxE,
+body .content2 .boxE {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  transform: translateZ(-100px);
+  background: url("images/skullbot-takes-a-break.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+html .content2 .boxF,
+body .content2 .boxF {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  transform: translateZ(100px);
+  background: url("images/sputtle-t.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+html .svgcontent,
+body .svgcontent {
+  width: 800px;
+  margin: 50px auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: 1px solid #ff6700;
+}
+html .svgcontent .loader,
+body .svgcontent .loader {
+  margin: 0 0 2em;
+  height: 100px;
+  width: 25%;
+  text-align: center;
+  padding: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+html .svgcontent .loader svg path,
+body .svgcontent .loader svg path,
+html .svgcontent .loader svg rect,
+body .svgcontent .loader svg rect {
+  fill: #ff6700;
+}
+html .stage,
+body .stage {
+  width: 250px;
+  height: 250px;
+  /* border: 1px solid red; */
+  border-radius: 50%;
+  position: relative;
+  margin: 50px auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+html .stage .sunstage,
+body .stage .sunstage {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(#87cefa, #faf1bd);
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  float: left;
+  transition: all 1.5s;
+}
+html .stage .sunstage.active,
+body .stage .sunstage.active {
+  background: linear-gradient(#4c3f6d, #6c62bb, #93b1ed, #87cefa 85%);
+}
+html .stage .sunstage span,
+body .stage .sunstage span {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  transition: all 1.5s;
+  animation: tian 4s ease-in-out infinite;
+}
+html .stage .sunstage span::before,
+body .stage .sunstage span::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: black 1px solid;
+  transform: rotateZ(30deg);
+}
+html .stage .sunstage span::after,
+body .stage .sunstage span::after {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: black 1px solid;
+  transform: rotateZ(-30deg);
+}
+html .stage .sunstage span.active,
+body .stage .sunstage span.active {
+  top: -30px;
+  right: 200px;
+  transition: all 2s;
+}
+html .stage .sunstage span.bord2,
+body .stage .sunstage span.bord2 {
+  top: 30px;
+  right: 85px;
+  animation: tian 4s ease-in-out infinite 0.5s;
+}
+html .stage .sunstage span.bord2.active,
+body .stage .sunstage span.bord2.active {
+  top: -50px;
+  right: 180px;
+  transition: all 3s;
+}
+html .stage .sunstage span.bord3,
+body .stage .sunstage span.bord3 {
+  top: 55px;
+  right: 90px;
+  animation: tian 4s ease-in-out infinite 0.8s;
+}
+html .stage .sunstage span.bord3.active,
+body .stage .sunstage span.bord3.active {
+  top: -20px;
+  right: 150px;
+  transition: all 1.5s;
+}
+html .stage .sunstage .sun,
+body .stage .sunstage .sun {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  background: yellow;
+  z-index: 1;
+  transition: all 1.5s;
+}
+html .stage .sunstage .sun.active,
+body .stage .sunstage .sun.active {
+  top: 100px;
+  left: -40px;
+  transition: all 1.5s;
+}
+html .stage .sunstage div,
+body .stage .sunstage div {
+  position: absolute;
+  margin-top: -25px;
+  top: 190px;
+  height: 100px;
+  width: 125px;
+  /* background-color: #87cefa; */
+  background: #87cefa;
+  border-radius: 60%;
+  z-index: 9;
+}
+html .stage .sunstage div:nth-child(1),
+body .stage .sunstage div:nth-child(1) {
+  left: -25px;
+  animation: tian 2s ease-in-out infinite 0.9s;
+}
+html .stage .sunstage div:nth-child(2),
+body .stage .sunstage div:nth-child(2) {
+  left: 30px;
+  animation: tian 2s ease-in-out infinite 0.6s;
+}
+html .stage .sunstage div:nth-child(3),
+body .stage .sunstage div:nth-child(3) {
+  left: 90px;
+  animation: tian 2s ease-in-out infinite 0.3s;
+}
+html .stage .sunstage div:nth-child(4),
+body .stage .sunstage div:nth-child(4) {
+  left: 145px;
+  animation: tian 2s ease-in-out infinite;
+}
+html .stage .cloud,
+body .stage .cloud {
+  height: 8px;
+  width: 40px;
+  background: white;
+  border-radius: 10px;
+  transition: all 1.5s;
+  animation: cloud 4s ease-in-out infinite;
+}
+html .stage .cloud.active,
+body .stage .cloud.active {
+  opacity: 0;
+}
+html .stage .cloud::after,
+body .stage .cloud::after {
+  position: absolute;
+  left: 5px;
+  top: -7px;
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+}
+html .stage .cloud::before,
+body .stage .cloud::before {
+  position: absolute;
+  left: 16px;
+  top: -10px;
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+}
+html .stage .cloud.cloud-1,
+body .stage .cloud.cloud-1 {
+  position: absolute;
+  left: 70px;
+  top: 50px;
+}
+html .stage .cloud.cloud-2,
+body .stage .cloud.cloud-2 {
+  position: absolute;
+  left: 185px;
+  top: 40px;
+}
+html .stage .cloud.cloud-3,
+body .stage .cloud.cloud-3 {
+  position: absolute;
+  left: 160px;
+  top: 80px;
+}
+html .stage .cloud.cloud-4,
+body .stage .cloud.cloud-4 {
+  position: absolute;
+  left: 25px;
+  top: 80px;
+}
+html .stage .cloud.cloud-5,
+body .stage .cloud.cloud-5 {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+}
+html .stage .moon,
+body .stage .moon {
+  position: absolute;
+  top: 100px;
+  right: -50px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#fefefe, #fffbe8);
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 1.5s;
+}
+html .stage .moon.active,
+body .stage .moon.active {
+  top: 50px;
+  right: 25px;
+  transition: all 2s;
+}
+html .stage .moon2,
+body .stage .moon2 {
+  position: absolute;
+  top: 180px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#fefefe, #fffbe8);
+  border-radius: 50%;
+  z-index: 99;
+  opacity: 0;
+}
+html .stage .moon2.active,
+body .stage .moon2.active {
+  transition: all 4s;
+  opacity: 0.3;
+}
+html .stage .stars *,
+body .stage .stars *,
+html .stage .stars *:before,
+body .stage .stars *:before,
+html .stage .stars *:after,
+body .stage .stars *:after {
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+}
+html .stage .stars,
+body .stage .stars {
+  opacity: 0;
+  -webkit-transition: opacity 2s ease;
+  -o-transition: opacity 2s ease;
+  transition: opacity 2s ease;
+}
+html .stage .stars.active,
+body .stage .stars.active {
+  opacity: 1;
+  -webkit-transition-delay: 4s;
+  -o-transition-delay: 4s;
+  transition-delay: 1s;
+  transition: opacity 2s ease;
+}
+html .stage .stars .star-group-1,
+body .stage .stars .star-group-1 {
+  width: 3px;
+  height: 3px;
+  left: 50px;
+  top: 50px;
+}
+html .stage .stars .star-group-1::before,
+body .stage .stars .star-group-1::before {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  left: 10px;
+  top: 50px;
+  content: "";
+  display: block;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+html .stage .stars .star-group-1::after,
+body .stage .stars .star-group-1::after {
+  width: 2px;
+  height: 2px;
+  left: -35px;
+  top: 35px;
+  opacity: 1;
+  content: "";
+  display: block;
+}
+html .stage .stars .star-group-2,
+body .stage .stars .star-group-2 {
+  width: 4px;
+  height: 4px;
+  left: 105px;
+  top: 80px;
+}
+html .stage .stars .star-group-2::before,
+body .stage .stars .star-group-2::before {
+  width: 3px;
+  height: 3px;
+  left: 40px;
+  top: 14px;
+  opacity: 0.8;
+  content: "";
+  display: block;
+}
+html .stage .stars .star-group-2::after,
+body .stage .stars .star-group-2::after {
+  width: 2px;
+  height: 2px;
+  left: 30px;
+  top: -40px;
+  opacity: 1;
+  content: "";
+  display: block;
+}
+html .stage .stars .star-group-3,
+body .stage .stars .star-group-3 {
+  width: 3px;
+  height: 3px;
+  left: 140px;
+  top: 30px;
+}
+html .stage .stars .star-group-3::before,
+body .stage .stars .star-group-3::before {
+  width: 2px;
+  height: 2px;
+  left: 50px;
+  top: 20px;
+  opacity: 0.8;
+}
+html .stage .stars .star-group-3::after,
+body .stage .stars .star-group-3::after {
+  width: 2px;
+  height: 2px;
+  left: 90px;
+  top: -20px;
+  opacity: 1;
+  content: "";
+  display: block;
+}
+html .stage .stars .star-group-4,
+body .stage .stars .star-group-4 {
+  width: 3px;
+  height: 3px;
+  left: 160px;
+  top: 60px;
+}
+html .stage .stars .star-group-4::before,
+body .stage .stars .star-group-4::before {
+  width: 2px;
+  height: 2px;
+  left: 80px;
+  top: 60px;
+  opacity: 0.8;
+  content: "";
+  display: block;
+}
+html .stage .stars .star-group-4::after,
+body .stage .stars .star-group-4::after {
+  width: 2px;
+  height: 2px;
+  left: 50px;
+  top: -20px;
+  opacity: 1;
+  content: "";
+  display: block;
+}
+html .stage .stars .shooting-star,
+body .stage .stars .shooting-star {
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, from(#ffffff), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  width: 35px;
+  height: 3px;
+  left: 220px;
+  top: 20px;
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -webkit-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  z-index: 0;
+}
+html .stage .stars .shooting-star.shooting,
+body .stage .stars .shooting-star.shooting {
+  animation: shooting-star 2s ease-in-out 2s;
+  animation-delay: 2s;
+}
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes animation1shape1 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(16px, 16px);
+    transform: translate(16px, 16px);
+  }
+}
+@keyframes animation1shape2 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-16px, 16px);
+    transform: translate(-16px, 16px);
+  }
+}
+@keyframes animation1shape3 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(16px, -16px);
+    transform: translate(16px, -16px);
+  }
+}
+@keyframes animation1shape4 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-16px, -16px);
+    transform: translate(-16px, -16px);
+  }
+}
+@keyframes animation2shape1 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(20px, 20px);
+    transform: translate(20px, 20px);
+  }
+}
+@keyframes animation2shape2 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-20px, 20px);
+    transform: translate(-20px, 20px);
+  }
+}
+@keyframes animation2shape3 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(20px, -20px);
+    transform: translate(20px, -20px);
+  }
+}
+@keyframes animation2shape4 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-20px, -20px);
+    transform: translate(-20px, -20px);
+  }
+}
+@keyframes animation3shape1 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
+  }
+}
+@keyframes animation3shape2 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-5px, 5px);
+    transform: translate(-5px, 5px);
+  }
+}
+@keyframes animation3shape3 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+  }
+}
+@keyframes animation3shape4 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px);
+  }
+}
+@keyframes animation4shape1 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
+  }
+}
+@keyframes animation4shape2 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-5px, 5px);
+    transform: translate(-5px, 5px);
+  }
+}
+@keyframes animation4shape3 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+  }
+}
+@keyframes animation4shape4 {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px);
+  }
+}
+@keyframes animation5shape1 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, 15px);
+    transform: translate(0, 15px);
+  }
+  50% {
+    -webkit-transform: translate(15px, 15px);
+    transform: translate(15px, 15px);
+  }
+  75% {
+    -webkit-transform: translate(15px, 0);
+    transform: translate(15px, 0);
+  }
+}
+@keyframes animation5shape2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(-15px, 0);
+    transform: translate(-15px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-15px, 15px);
+    transform: translate(-15px, 15px);
+  }
+  75% {
+    -webkit-transform: translate(0, 15px);
+    transform: translate(0, 15px);
+  }
+}
+@keyframes animation5shape3 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(15px, 0);
+    transform: translate(15px, 0);
+  }
+  50% {
+    -webkit-transform: translate(15px, -15px);
+    transform: translate(15px, -15px);
+  }
+  75% {
+    -webkit-transform: translate(0, -15px);
+    transform: translate(0, -15px);
+  }
+}
+@keyframes animation5shape4 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, -15px);
+    transform: translate(0, -15px);
+  }
+  50% {
+    -webkit-transform: translate(-15px, -15px);
+    transform: translate(-15px, -15px);
+  }
+  75% {
+    -webkit-transform: translate(-15px, 0);
+    transform: translate(-15px, 0);
+  }
+}
+@keyframes animation6shape1 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, 18px);
+    transform: translate(0, 18px);
+  }
+  50% {
+    -webkit-transform: translate(18px, 18px);
+    transform: translate(18px, 18px);
+  }
+  75% {
+    -webkit-transform: translate(18px, 0);
+    transform: translate(18px, 0);
+  }
+}
+@keyframes animation6shape2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(-18px, 0);
+    transform: translate(-18px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-18px, 18px);
+    transform: translate(-18px, 18px);
+  }
+  75% {
+    -webkit-transform: translate(0, 18px);
+    transform: translate(0, 18px);
+  }
+}
+@keyframes animation6shape3 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(18px, 0);
+    transform: translate(18px, 0);
+  }
+  50% {
+    -webkit-transform: translate(18px, -18px);
+    transform: translate(18px, -18px);
+  }
+  75% {
+    -webkit-transform: translate(0, -18px);
+    transform: translate(0, -18px);
+  }
+}
+@keyframes animation6shape4 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, -18px);
+    transform: translate(0, -18px);
+  }
+  50% {
+    -webkit-transform: translate(-18px, -18px);
+    transform: translate(-18px, -18px);
+  }
+  75% {
+    -webkit-transform: translate(-18px, 0);
+    transform: translate(-18px, 0);
+  }
+}
+@keyframes rotate {
+  0%,
+  10% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  15%,
+  20% {
+    transform: rotateY(90deg) rotateX(0deg);
+  }
+  25%,
+  35% {
+    transform: rotateY(0deg) rotateX(270deg);
+  }
+  40%,
+  50% {
+    transform: rotateY(180deg) rotateX(0deg);
+  }
+  55%,
+  65% {
+    transform: rotateY(270deg) rotateX(0deg);
+  }
+  70%,
+  85% {
+    transform: rotateY(-180deg) rotateX(-90deg);
+  }
+  90%,
+  95% {
+    transform: rotateY(-270deg) rotateX(0deg);
+  }
+}
+@keyframes tian {
+  0% {
+    transform: rotateZ(0deg) translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: rotateZ(3deg) translateY(5px) translateX(5px);
+  }
+  50% {
+    transform: rotateZ(-3deg) translateY(-5px) translateX(-5px);
+  }
+  75% {
+    transform: rotateZ(3deg) translateY(5px) translateX(5px);
+  }
+  100% {
+    transform: rotateZ(0deg) translateY(0px) translateX(0px);
+  }
+}
+@keyframes shooting-star {
+  100% {
+    -webkit-transform: rotate(-40deg) translateX(-450px);
+    transform: rotate(-40deg) translateX(-450px);
+  }
+}
+@keyframes cloud {
+  0% {
+    transform: rotateZ(0deg) translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: rotateZ(1deg) translateY(1px) translateX(1px);
+  }
+  50% {
+    transform: rotateZ(-1deg) translateY(-1px) translateX(-1px);
+  }
+  75% {
+    transform: rotateZ(1deg) translateY(1px) translateX(1px);
+  }
+  100% {
+    transform: rotateZ(0deg) translateY(0px) translateX(0px);
+  }
+}
+/*# sourceMappingURL=./style.css.map */

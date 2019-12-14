@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			.stage {
+				width: 650px;
+				height: 600px;
+				margin: 0 auto;
+				text-align: center;
+				position: relative;
+				background: url("./images/turntable-bg.jpg") no-repeat;
+			}
+			.stage img {
+				position: absolute;
+			}
+			.stage img.turntable {
+				top: 59px;
+				left: 118px;
+				/* transform: rotate(36000deg);
+                transition: all 10s; */
+			}
+			.stage img.pointer {
+				top: 153px;
+				left: 260px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stage">
+			<img class="turntable" src="images/turntable.png" alt="" />
+			<img class="pointer" src="images/pointer.png" alt="" />
+		</div>
+
+		<script>
+			var turntable = document.getElementsByClassName("turntable")[0];
+			var pointer = document.getElementsByClassName("pointer")[0];
+
+			pointer.onclick = function() {
+				var randomNum = generateRandomNum();
+				var lotteryCode = generateLotteryCode(randomNum);
+				// console.log(randomNum, lotteryCode);
+				updataView(lotteryCode);
+			};
+			//生成随机数
+			function generateRandomNum() {
+				return Math.floor(Math.random() * 100);
+			}
+
+			//根据随机数 转换成中将编码
+			function generateLotteryCode(n) {
+				if (n < 3) {
+					return { code: 1, text: "一等奖" };
+				} else if (n < 8) {
+					return { code: 2, text: "二等奖" };
+				} else if (n < 15) {
+					return { code: 3, text: "三等奖" };
+				} else if (n < 25) {
+					return { code: 4, text: "四等奖" };
+				} else if (n < 40) {
+					return { code: 5, text: "五等奖" };
+				} else if (n < 65) {
+					return { code: 6, text: "六等奖" };
+				} else {
+					return { code: 7, text: "未中奖" };
+				}
+			}
+
+			//根据中将信息 更新视图
+
+			function updataView(obj) {
+				// 角度 偏移360/7/2 + 360/7 * (code - 1)
+				var x = 360 / 7 / 2 + (360 / 7) * (obj.code - 1);
+				turntable.style.transition = "all 3s";
+				turntable.style.transform = "rotate(" + (x + 360 * 10) + "deg)";
+
+				//在转盘转完之后 悄悄减去 多转的?圈
+				setTimeout(function() {
+					turntable.style.transition = "none";
+                    turntable.style.transform = "rotate(" + x + "deg)";
+                    
+					alert(obj.text);
+				}, 3500);
+			}
+
+			//
+
+			Math.random();
+			// 随机生成 0 - 1 (不包括)的随机数 0.7262679570289916
+			Math.random() * 10;
+			Math.floor(Math.random() * 10);
+            //0-10!
+            
+
+			Math.PI;
+			Math.ceil(3.14);
+			Math.floor(3.99999);
+			Math.round(3.59);
+		</script>
+	</body>
+</html>

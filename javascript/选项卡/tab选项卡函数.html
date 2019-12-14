@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			ul,
+			p {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			body {
+				background: rgb(101, 92, 137);
+			}
+			.tab {
+				width: 500px;
+				margin: 0 auto;
+			}
+			.title {
+				overflow: hidden;
+				line-height: 40px;
+				color: #8478b3;
+			}
+			.title li {
+				float: left;
+				padding: 0 30px;
+				background: #544f6b;
+			}
+			.title li:first-child {
+				background: white;
+			}
+			.content {
+				padding: 30px;
+				background: white;
+			}
+			.content p {
+				text-indent: 2em;
+				font-size: 14px;
+				line-height: 2em;
+				display: none;
+			}
+			.content p:first-child {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tab">
+			<ul class="title">
+				<li onclick="activeTab(0)">tab 1</li>
+				<li onclick="activeTab(1)">tab 2</li>
+				<li onclick="activeTab(2)">tab 3</li>
+			</ul>
+			<div class="content">
+				<p>
+					1城市发展弓，铲，请运输工具的时间，合适，从世界的角落。阅读更多。直到我的健康管理服务。对于所需的元素。然而，一些质量和能量。减轻压力环境的笑声。
+				</p>
+				<p>
+					2我们踢了一场狮子。但是，我们生活在一个擦鞋电话辅导。欢迎回来。生命本身的管理的一些成员。脚本。一些烦恼两次。结果是脚创建客户服务或故障排除。但是，这是不是有时真的很痛苦。阅读更多。现在时间得到舒适。
+				</p>
+				<p>
+					3网站链接昂贵的窗口几乎可以保证，仇恨怀孕的恐惧之前，大量移民，现在的恐惧。投资银行的雇员基础。但阿森纳，质量规模企业发展，互动电视台的床，他的工作很难把注意力集中的时间。
+					日本是世界上最大的和销售。电影是。联系。有些家伙，步行或汽车销售，我的妈妈是不是足球队的酒店发展
+				</p>
+			</div>
+		</div>
+		<script>
+			var lis = document.querySelectorAll(".title li");
+			var cos = document.querySelectorAll(".content p");
+			function activeTab(n) {
+				for (var i = 0; i < lis.length; i++) {
+					lis[i].style.background = "#544f6b";
+					cos[i].style.display = "none";
+				}
+				lis[n].style.background = "white";
+				cos[n].style.display = "block";
+			}
+		</script>
+	</body>
+</html>

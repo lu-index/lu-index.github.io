@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .stage{
+               width: 500px;
+               background: lightgreen;
+               margin: 0 auto;
+               position: relative;
+               overflow: hidden;
+               
+           }
+           .stage img{
+               width: 350px;
+               vertical-align: middle;
+               position: absolute;
+               left: 0;
+               top: 0;
+               transition: all 0.3s;
+           }
+           .stage img:first-child{
+               position: static;
+           }
+         
+       </style>
+</head>
+<body>
+    <div class="stage">
+            <img src="./images/a1.png" alt="">
+            <img src="./images/a2.png" alt="">
+            <img src="./images/a3.png" alt="">
+            <img src="./images/a4.png" alt="">
+            <img src="./images/a1.png" alt="">
+            </div>
+
+
+            <script>
+                var stage = document.querySelector('.stage')
+                var imgs = document.querySelectorAll('.stage img')
+
+                for (var i = 0; i < imgs.length; i++) {
+                    imgs[i].style.left = (100 / imgs.length) * i + '%'
+                    //给每一个图片 设置一个索引号
+                    imgs[i].xxx = i
+
+                    imgs[i].onmouseover = function () {
+                        // console.log(this.xxx)
+                        //this当前元素 this.xxx 拿到刚才设置的索引号
+                        for (var j = 0; j < imgs.length; j++) {
+                            if (j <= this.xxx) {
+                                console.log(j)
+                                imgs[j].style.left = j * ((stage.offsetWidth - imgs[0].offsetWidth) / (imgs.length-1)) + 'px'
+                            }else{
+                                imgs[j].style.left = (j - 1) * ((stage.offsetWidth - imgs[0].offsetWidth) / (imgs.length -1)) + imgs[0].offsetWidth + 'px'
+                            }
+                            
+                        }
+                    }
+                    imgs[i].onmouseout = function () {
+                        for (var i = 0; i < imgs.length; i++) {
+                            imgs[i].style.left = (100 / imgs.length) * i + '%'                      
+                        }
+                    }
+                    
+                }
+            </script>
+        
+</body>
+
+</html>
