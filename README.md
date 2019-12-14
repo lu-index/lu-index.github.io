@@ -17,7 +17,7 @@
   - [BootStrap+css 模特](https://lu-index.github.io/Bootstrap/models/)
   - [BootStrap+css 航海](https://lu-index.github.io/Bootstrap/sail/)  
 - CSS3+svg
-  - [css3loading+svgloading](https://lu-index.github.io/css3+svg/move) 
+  - [css3loading+svgloading](https://lu-index.github.io/css3+svg/move/) 
 - HTML5
   - [canvas 绘制安卓logo](https://lu-index.github.io/html5/canvas安卓/)
   - [Canvas+ES6 球球大作战](https://lu-index.github.io/html5/boll/) 
