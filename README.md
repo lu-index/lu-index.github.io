@@ -1,14 +1,13 @@
 # 项目展示
 
 ## html+css
-  - [种地](https://lu-index.github.io/html+css/种田项目/)
-  - [花果茶](https://lu-index.github.io/html+css/花果茶/) 
+  #### [种地](https://lu-index.github.io/html+css/种田项目/)
+  #### [花果茶](https://lu-index.github.io/html+css/花果茶/) 
 ## JavaScript
-  - [JavaScript 函数选项卡](https://lu-index.github.io/javascript/选项卡/)
-  - [JavaScript for循环 横向手风琴](https://lu-index.github.io/javascript/横向手风琴/)
-  - [JavaScript 抽奖](https://lu-index.github.io/javascript/抽奖/)
-  - [JavaScript 打飞机小游戏](https://lu-index.github.io/javascript/打飞机游戏/)
-  
+  #### [JavaScript 函数选项卡](https://lu-index.github.io/javascript/选项卡/)
+  #### [JavaScript for循环 横向手风琴](https://lu-index.github.io/javascript/横向手风琴/)
+  #### [JavaScript 抽奖](https://lu-index.github.io/javascript/抽奖/)
+  #### [JavaScript 打飞机小游戏](https://lu-index.github.io/javascript/打飞机游戏/) 
 ## jQuery
   - [jquery 图像渐变](https://lu-index.github.io/jquery/图片渐变/)
   - [jquery 简化轮播图](https://lu-index.github.io/jquery/简化轮播图/) 
