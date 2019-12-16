@@ -1,6 +1,6 @@
 # 项目展示
 
-- html+css
+## html+css
   - [种地](https://lu-index.github.io/html+css/种田项目/)
   - [花果茶](https://lu-index.github.io/html+css/花果茶/) 
 - JavaScript
