@@ -14,7 +14,8 @@
   - [jquery 图片放大镜](https://lu-index.github.io/jquery/JQ图片放大镜/) 
 ## BootStrap
   - [BootStrap+css 模特](https://lu-index.github.io/Bootstrap/models/)
-  - [BootStrap+css 航海](https://lu-index.github.io/Bootstrap/sail/)  
+  - [BootStrap+css 航海](https://lu-index.github.io/Bootstrap/sail/)
+  - [BootStrap+css 音乐](https://lu-index.github.io/Bootstrap/music/)  
 ## CSS3+svg
   - [css3loading+svgloading](https://lu-index.github.io/CSS3+SVG/) 
 ## HTML5
@@ -22,6 +23,7 @@
   - [Canvas+ES6 球球大作战](https://lu-index.github.io/html5/boll/) 
   - [HTNL5+CSS3 音乐播放器](https://lu-index.github.io/html5/music)
 ## VUE.js
+  - [HTNL5+CSS3 Todo组件](https://lu-index.github.io/vue.js/Todo组件)
 - 小程序
 - node.js
 

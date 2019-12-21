@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <style>
+            #app {
+                width: 360px;
+                margin: 0 auto;
+                background: rgb(230, 230, 230);
+                padding: 15px;
+                height: 100vh;
+                overflow-y: scroll;
+                position: relative;
+                overflow: hidden;
+            }
+            #app h1{
+                text-align: center;
+                font-size: 20px;
+                padding-bottom: 10px;
+                color: orange;
+                /* display: inline-block; */
+            }
+            .todos {
+            }
+            .todos li {
+                display: flex;
+                padding: 15px;
+                background: white;
+                border-radius: 10px;
+                margin-bottom: 15px;
+                box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+                line-height: 1.5em;
+                transition: all 0.5s;
+            }
+            .todos li i {
+                width: 1em;
+                /* background: lightsalmon; */
+                margin-right: 10px;
+                text-align: center;
+                color: gray;
+                line-height: 1.5em;
+                cursor: pointer;
+            }
+            .todos li span {
+                flex: 1;
+                text-align: justify;
+                white-space: pre-wrap;
+            }
+            .todos li.finish span {
+                text-decoration: line-through;
+                color: gray;
+            }
+            .add {
+                background: orange;
+                border-radius: 50%;
+                width: 4vw;
+                height: 4vw;
+                color: white;
+                text-align: center;
+                line-height: 4vw;
+                font-weight: 100;
+                font-size: 2vw;
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+            }
+            .addText {
+                /* position: relative; */
+                position: absolute;
+                bottom: -20vh;
+                left: 0;
+                width: 100%;
+                transition: all 0.3s;
+                z-index: 2;
+            }
+            .addText.active {
+                bottom: 0;
+            }
+            .addText textarea {
+                width: 100%;
+                height: 20vh;
+                border-radius: 15px 15px 0 0;
+                padding: 15px;
+                border: none;
+                outline: none;
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+                resize: none;
+                vertical-align: middle;
+            }
+            .addText button {
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+                background: #e2e1e1;
+                border: none;
+                outline: none;
+                padding: 5px 15px;
+            }
+            .addText button:active {
+                background: orange;
+            }
+            .model {
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.1);
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: all .5s;
+            }
+            @media(max-width:768px) {
+                #app {
+                width: 100vw;
+            }
+            .add {
+                width: 15vw;
+                height: 15vw;
+                line-height: 15vw;
+                font-weight: 100;
+                font-size: 5vw;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <h1>便签</h1>
+            <ul class="todos">
+                <todo-item v-for="(todo, index) in unfinishedTodos" :key="todo.id" :todo="todo"></todo-item>
+                <todo-item v-for="(todo, index) in finishedTodos" :key="todo.id" :todo="todo"></todo>
+            </ul>
+            <div class="add fa fa-plus" @click="isEditing=true"></div>
+            <add-todo :is-editing="isEditing" @close-editing="isEditing=false"
+            @translate-newtodo='addTodo($event)'></add-todo>
+        </div>
+
+        <script>
+            Vue.component('add-todo', {
+                props:['isEditing'],
+                data: function () {
+                    return {
+                        newTodo: "",
+                    }
+                },
+                template: `
+                <div class="addText" :class="{active:isEditing}">
+                    <div :class="{model:isEditing}" @click="$emit('close-editing')"></div>
+                    <textarea v-model.trim='newTodo'></textarea>
+                    <button @click='buttonclick'>确定</button>
+                </div>
+                `,
+                methods: {
+                    buttonclick: function () {
+                        if (this.newTodo) {
+                        this.$emit('translate-newtodo', this.newTodo)
+                        this.newTodo = ''  
+                        }
+                       
+                    }
+                },
+            })
+
+            Vue.component("todo-item", {
+                props: ["todo"],
+                template: `
+                    <li :class="{finish:todo.finished}">
+                        <i v-if="todo.finished" class="fa fa-check-square" @click="todo.finished = false"></i>
+                        <i v-else class="fa fa-square-o" @click="todo.finished = true"></i>
+                        <span>{{todo.text}}</span>
+                    </li>
+                `
+            });
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    todos: [
+                        {
+                            id: 0,
+                            text:
+                                "0早上好！",
+                            finished: false
+                        },
+                        {
+                            id: 1,
+                            text: "1下午好！",
+                            finished: false
+                        },
+                        {
+                            id: 2,
+                            text: "2晚上好！",
+                            finished: false
+                        }
+                    ],
+                    
+                    isEditing: false
+                },
+                computed: {
+                    finishedTodos: function() {
+                        return this.todos.filter(function(todo) {
+                            return todo.finished;
+                        }); // .reverse() 倒序
+                    },
+                    unfinishedTodos: function() {
+                        return this.todos.filter(function(todo) {
+                            return !todo.finished;
+                        });// .reverse() 倒序
+                    }
+                },
+                methods: {
+                    addTodo: function(str) {
+                        // console.log(str);
+                        
+                        // 提交数据
+                        this.todos.unshift({
+                            id: this.todos.length,
+                            text: str,
+                            finished: false
+                        })
+                        // 关闭编辑状态
+                        this.isEditing = false
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
