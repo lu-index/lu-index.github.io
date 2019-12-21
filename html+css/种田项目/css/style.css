@@ -24,12 +24,12 @@ li {
   display: block;
 }
 /* 头部样式--seart */
-header.bg {
+body header.bg {
   background: url(../images/banner.jpg) no-repeat;
   background-size: cover;
   background-position: top center;
 }
-header.bg .nav {
+body header.bg .nav {
   line-height: 60px;
   width: 1140px;
   background: rgba(0, 0, 0, 0.4);
@@ -37,40 +37,40 @@ header.bg .nav {
   color: white;
   overflow: hidden;
 }
-header.bg .nav ul.menu li {
+body header.bg .nav ul.menu li {
   float: left;
   margin: 0 15px;
 }
-header.bg .nav ul.menu li::after {
+body header.bg .nav ul.menu li::after {
   content: "/";
   margin-left: 15px;
 }
-header.bg .nav ul.menu li:last-child::after {
+body header.bg .nav ul.menu li:last-child::after {
   content: none;
 }
-header.bg .nav ul.menu li a {
+body header.bg .nav ul.menu li a {
   color: white;
   transition: all 0.3s;
   text-transform: capitalize;
 }
-header.bg .nav ul.menu li a:hover {
+body header.bg .nav ul.menu li a:hover {
   border-top: 4px solid yellow;
   color: yellow;
 }
-header.bg form.search {
+body header.bg form.search {
   position: relative;
   top: 0;
   left: 0;
   margin-right: 15px;
 }
-header.bg form.search input:first-child {
+body header.bg form.search input:first-child {
   color: white;
   padding: 8px 10px;
   outline: none;
   background: transparent;
   border: 1px solid white;
 }
-header.bg form.search input:last-child {
+body header.bg form.search input:last-child {
   width: 22px;
   height: 22px;
   text-indent: -10em;
@@ -83,10 +83,10 @@ header.bg form.search input:last-child {
   top: 20px;
   cursor: pointer;
 }
-header.bg form.search input::placeholder {
+body header.bg form.search input::placeholder {
   color: white;
 }
-header.bg .title h1 {
+body header.bg .title h1 {
   height: 100px;
   width: 280px;
   margin: 160px auto;
@@ -96,146 +96,240 @@ header.bg .title h1 {
   font-size: 4.5em;
   font-weight: normal;
   color: white;
+  transition: all 1.5s;
 }
-header.bg .title h1 a {
+body header.bg .title h1.active {
+  transform: scale(1);
+}
+body header.bg .title h1 a {
   color: white;
 }
-header.bg ul.grid {
+body header.bg ul.grid {
   width: 1140px;
-  margin: 0 auto;
+  margin: 0px auto;
   position: relative;
-  overflow: hidden;
-  top: 130px;
+  top: 120px;
   left: 0;
 }
-header.bg ul.grid li {
+body header.bg ul.grid::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+body header.bg ul.grid li {
   width: 25%;
   float: left;
   text-align: center;
+  transition: all 1s;
+  position: relative;
 }
-header.bg ul.grid li .card {
+body header.bg ul.grid li:nth-child(1) {
+  position: relative;
+  top: 0px;
+  left: -500px;
+}
+body header.bg ul.grid li:nth-child(1).active {
+  left: 0px;
+}
+body header.bg ul.grid li:nth-child(2) {
+  position: relative;
+  top: -1000px;
+  left: 0;
+}
+body header.bg ul.grid li:nth-child(2).active {
+  top: 0px;
+}
+body header.bg ul.grid li:nth-child(3) {
+  position: relative;
+  bottom: -500px;
+  left: 0;
+}
+body header.bg ul.grid li:nth-child(3).active {
+  bottom: 0px;
+}
+body header.bg ul.grid li:nth-child(4) {
+  position: relative;
+  top: 0px;
+  right: -500px;
+}
+body header.bg ul.grid li:nth-child(4).active {
+  right: 0px;
+}
+body header.bg ul.grid li .card {
   background: #16a667;
   margin: 0 14px;
   padding: 1.5em 2em;
   color: white;
   line-height: 25px;
 }
-header.bg ul.grid li .card img {
+body header.bg ul.grid li .card img {
   border: 8px solid white;
   border-radius: 100px;
   padding: 10px;
 }
-header.bg ul.grid li .card img:hover {
+body header.bg ul.grid li .card img:hover {
   transition: all 0.5s;
   transform: rotateY(360deg);
 }
-header.bg ul.grid li .card h3 {
+body header.bg ul.grid li .card h3 {
   font-size: 18px;
   font-weight: bold;
   line-height: 1.5em;
 }
-header.bg ul.grid li .card p {
+body header.bg ul.grid li .card p {
   font-size: 1em;
   line-height: 1.5em;
   padding: 0.5em 0;
 }
-.about {
+body .about {
   width: 1110px;
   height: 500px;
   margin: 0 auto;
   margin-top: 180px;
 }
-.about h3 {
+body .about h3 {
   font-size: 36px;
+  width: 460px;
+  transition: all 1.5s;
+  transform: scale(0);
 }
-.about .inco {
-  height: 420px;
+body .about h3.active {
+  transform: scale(1);
+}
+body .about .inco {
   width: 460px;
   line-height: 100px;
-  margin-top: 30px;
+  position: relative;
+  top: 0;
+  right: -1000px;
+  transition: all 1.5s;
 }
-.about .inco img {
+body .about .inco img {
   width: 430px;
 }
-.about .font {
+body .about .inco.active {
+  right: 0;
+}
+body .about .font {
   height: 400px;
   width: 640px;
+  position: relative;
+  top: 0;
+  left: -1000px;
+  transition: all 1.5s;
 }
-.about .font p {
+body .about .font p {
   font-size: 14px;
   margin-top: 30px;
   line-height: 1.8em;
   color: #939393;
 }
-.content_our {
+body .about .font.active {
+  left: 0;
+}
+body .content_our {
   height: 450px;
   width: 100%;
-  overflow: hidden;
   background: #37353b;
 }
-.content_our ul.service {
+body .content_our ul.service {
   width: 1140px;
   height: 350px;
   margin: 50px auto;
 }
-.content_our ul.service h3 {
+body .content_our ul.service h3 {
   font-size: 36px;
   color: white;
   margin: 0 17px;
+  transition: all 1s;
+  transform: scale(0);
 }
-.content_our ul.service li {
+body .content_our ul.service h3.active {
+  transform: scale(1);
+}
+body .content_our ul.service li {
   text-align: center;
   width: 350px;
   float: left;
   margin: 0 15px;
+  transition: all 1s;
 }
-.content_our ul.service li .guide {
+body .content_our ul.service li:nth-child(2) {
+  position: relative;
+  top: 0px;
+  left: -800px;
+}
+body .content_our ul.service li:nth-child(2).active {
+  left: 0px;
+}
+body .content_our ul.service li:nth-child(3) {
+  position: relative;
+  bottom: -100px;
+  left: 0px;
+}
+body .content_our ul.service li:nth-child(3).active {
+  bottom: 0px;
+}
+body .content_our ul.service li:nth-child(4) {
+  position: relative;
+  right: -800px;
+  top: 0px;
+}
+body .content_our ul.service li:nth-child(4).active {
+  right: 0px;
+}
+body .content_our ul.service li .guide {
   float: left;
   padding: 1.5em 2em;
   line-height: 25px;
 }
-.content_our ul.service li .guide img {
+body .content_our ul.service li .guide img {
   background: #16a667;
   border-radius: 10px;
   padding: 5px 10px;
 }
-.content_our ul.service li .guide img:hover {
+body .content_our ul.service li .guide img:hover {
   background: orange;
 }
-.content_our ul.service li .guide h4 {
+body .content_our ul.service li .guide h4 {
   font-size: 1.2em;
   color: white;
   padding: 5px;
 }
-.content_our ul.service li .guide p {
+body .content_our ul.service li .guide p {
   font-size: 10px;
   padding: 5px;
   color: #939393;
 }
-.works {
+body .works {
   background: #eeeeee;
   height: 650px;
+  transform: scale(0);
+  transition: all 1.5s;
 }
-.works .content h3 {
+body .works.active {
+  transform: scale(1);
+}
+body .works .content h3 {
   width: 1140px;
   margin: 0 auto;
   padding: 30px;
   font-size: 34px;
 }
-.works .content ul.grid {
+body .works .content ul.grid {
   width: 1140px;
   margin: 0 auto;
 }
-.works .content ul.grid li {
+body .works .content ul.grid li {
   float: left;
   width: 25%;
   position: relative;
 }
-.works .content ul.grid li img {
+body .works .content ul.grid li img {
   width: 100%;
   display: block;
 }
-.works .content ul.grid li::after {
+body .works .content ul.grid li::after {
   content: "";
   position: absolute;
   left: 0;
@@ -247,52 +341,80 @@ header.bg ul.grid li .card p {
   transform: scale(0);
   transition: all 0.6s;
 }
-.works .content ul.grid li:hover::after {
+body .works .content ul.grid li:hover::after {
   transform: scale(1);
   z-index: 1;
 }
-.news {
+body .news {
   width: 100%;
   height: 650px;
 }
-.news .hot {
+body .news .hot {
   width: 1140px;
   height: 650px;
   margin: 0 auto;
 }
-.news .hot h3 {
+body .news .hot h3 {
   padding: 40px 0 0 30px;
   font-size: 34px;
 }
-.news .hot ul {
+body .news .hot ul {
   width: 1140px;
-  margin: 0 auto;
+  margin-left: 30px;
 }
-.news .hot ul li {
+body .news .hot ul li {
   width: 31%;
   float: left;
+  transition: all 1s;
 }
-.news .hot ul li .more {
+body .news .hot ul li:nth-child(1) {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: -850px;
+}
+body .news .hot ul li:nth-child(1).active {
+  left: 0px;
+}
+body .news .hot ul li:nth-child(2) {
+  transform: rotateY(0);
+}
+body .news .hot ul li:nth-child(2).active {
+  transform: rotateY(360deg);
+}
+body .news .hot ul li:nth-child(3) {
+  position: relative;
+  top: 0;
+  right: 0;
+  right: -850px;
+}
+body .news .hot ul li:nth-child(3).active {
+  right: 0;
+}
+body .news .hot ul li .more {
   float: left;
-  padding: 30px;
+  padding: 0 15px;
   background: white;
 }
-.news .hot ul li .more h4 {
+body .news .hot ul li .more img {
+  width: 100%;
+}
+body .news .hot ul li .more h4 {
   padding: 8px 0;
   font-size: 1.3em;
 }
-.news .hot ul li .more b {
+body .news .hot ul li .more b {
   padding: 15px 0;
   color: #bbbbbb;
   font-weight: normal;
 }
-.news .hot ul li .more p {
+body .news .hot ul li .more p {
   padding: 8px 0;
   line-height: 1.5em;
   font-size: 12px;
   color: #bbbbbb;
 }
-.news .hot ul li .more .button {
+body .news .hot ul li .more .button {
   width: 120px;
   height: 40px;
   margin-top: 15px;
@@ -303,14 +425,14 @@ header.bg ul.grid li .card p {
   text-transform: capitalize;
   position: relative;
 }
-.news .hot ul li .more .button b {
+body .news .hot ul li .more .button b {
   position: relative;
   z-index: 1;
 }
-.news .hot ul li .more .button b a {
+body .news .hot ul li .more .button b a {
   color: white;
 }
-.news .hot ul li .more .button .mask {
+body .news .hot ul li .more .button .mask {
   width: 100%;
   height: 100%;
   background: #16a667;
@@ -319,144 +441,202 @@ header.bg ul.grid li .card p {
   top: 0;
   transition: all 0.4s;
 }
-.news .hot ul li .more .button:hover .mask {
+body .news .hot ul li .more .button:hover .mask {
   transform: rotateX(90deg);
 }
-.guider {
+body .guider {
   width: 100%;
   height: 470px;
   background: #3F454D;
 }
-.guider ul.content {
-  width: 1140px;
+body .guider ul.content {
+  width: 1200px;
   margin: 0 auto;
-  padding: 0 0 0 50px;
 }
-.guider ul.content li {
+body .guider ul.content li {
+  width: 300px;
   float: left;
+  padding-left: 80px;
+  transition: all 1s;
 }
-.guider ul.content li .vote {
+body .guider ul.content li:nth-child(1) {
+  position: relative;
+  top: 0;
+  left: -800px;
+  transform: scale(0);
+}
+body .guider ul.content li:nth-child(1).active {
+  left: 0;
+  transform: scale(1);
+}
+body .guider ul.content li:nth-child(2) {
+  transform: scale(0);
+}
+body .guider ul.content li:nth-child(2).active {
+  transform: scale(1);
+}
+body .guider ul.content li:nth-child(3) {
+  position: relative;
+  top: 0;
+  right: -800px;
+  transform: scale(0);
+}
+body .guider ul.content li:nth-child(3).active {
+  right: 0;
+  transform: scale(1);
+}
+body .guider ul.content li .vote {
   width: 380px;
   height: 470px;
   margin: 0 auto;
   padding: 20px 0px;
 }
-.guider ul.content li .vote h3 {
+body .guider ul.content li .vote h3 {
   padding: 30px 0;
   font-size: 2.2em;
   color: white;
 }
-.guider ul.content li .vote .box {
+body .guider ul.content li .vote .box {
   width: 100%;
   height: 100px;
 }
-.guider ul.content li .vote .box .left img {
+body .guider ul.content li .vote .box .left img {
   width: 75px;
   height: 75px;
 }
-.guider ul.content li .vote .box .right {
+body .guider ul.content li .vote .box .right {
   margin: 0px 0 0 10px;
   line-height: 25px;
 }
-.guider ul.content li .vote .box .right h4 {
+body .guider ul.content li .vote .box .right h4 {
   font-size: 18px;
   color: white;
   cursor: pointer;
 }
-.guider ul.content li .vote .box .right h4:hover {
+body .guider ul.content li .vote .box .right h4:hover {
   color: orange;
 }
-.guider ul.content li .vote .box .right p {
+body .guider ul.content li .vote .box .right p {
   font-size: 12px;
   color: #999999;
 }
-.guider ul.content li .vote .icon {
+body .guider ul.content li .vote .icon {
   width: 100%;
   height: 120px;
 }
-.guider ul.content li .vote .icon li {
+body .guider ul.content li .vote .icon li {
   padding: 5px 10px;
   line-height: 1.2em;
   background: url(../images/list-arrow.png) no-repeat 0px 13px;
   padding: 10px 24px;
   color: #999999;
   font-size: 12px;
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: scale(1);
   cursor: pointer;
 }
-.guider ul.content li .vote .icon li:hover {
+body .guider ul.content li .vote .icon li:hover {
   color: orange;
 }
-.guider ul.content li .vote .contact {
+body .guider ul.content li .vote .contact {
   width: 100%;
   height: 80px;
   float: left;
 }
-.guider ul.content li .vote .contact .left {
+body .guider ul.content li .vote .contact .left {
   width: 45px;
   height: 45px;
   background: url(../images/img-sprite1.png) no-repeat;
   background-position-x: -217px;
 }
-.guider ul.content li .vote .contact .right {
+body .guider ul.content li .vote .contact .right {
   color: white;
   margin-left: 5px;
   cursor: pointer;
 }
-.guider ul.content li .vote .contact .right:hover {
+body .guider ul.content li .vote .contact .right:hover {
   color: orange;
 }
-.guider ul.content li .vote .contact .left2 {
+body .guider ul.content li .vote .contact .left2 {
   width: 45px;
   height: 45px;
   background: url(../images/img-sprite1.png) no-repeat;
   background-position-x: -255px;
 }
-.guider ul.content li .vote .contact .left3 {
+body .guider ul.content li .vote .contact .left3 {
   width: 45px;
   height: 45px;
   background: url(../images/img-sprite1.png) no-repeat;
   background-position-x: -295px;
 }
-footer.partner {
+body footer.partner {
   width: 100%;
   height: 220px;
+  padding-bottom: 30px;
 }
-footer.partner ul.content {
+body footer.partner ul.content {
   width: 1140px;
   margin: 0 auto;
 }
-footer.partner ul.content li {
+body footer.partner ul.content li {
   text-align: center;
   line-height: 50px;
+  transition: all 1s;
 }
-footer.partner ul.content li span {
+body footer.partner ul.content li:nth-child(1) {
+  position: relative;
+  top: 0;
+  left: -1200px;
+}
+body footer.partner ul.content li:nth-child(1).active {
+  left: 0;
+}
+body footer.partner ul.content li:nth-child(2) {
+  position: relative;
+  top: -50px;
+  left: 0px;
+}
+body footer.partner ul.content li:nth-child(2).active {
+  top: 0;
+}
+body footer.partner ul.content li:nth-child(3) {
+  position: relative;
+  right: -1200px;
+  top: 0;
+}
+body footer.partner ul.content li:nth-child(3).active {
+  right: 0;
+}
+body footer.partner ul.content li span {
   display: inline-block;
   width: 55px;
   height: 55px;
   margin-left: 15px;
   background: url(../images/img-sprite1.png) no-repeat;
 }
-footer.partner ul.content li span:nth-child(2) {
+body footer.partner ul.content li span:nth-child(2) {
   background-position-x: -55px;
 }
-footer.partner ul.content li span:nth-child(3) {
+body footer.partner ul.content li span:nth-child(3) {
   background-position-x: -110px;
 }
-footer.partner ul.content li span:nth-child(4) {
+body footer.partner ul.content li span:nth-child(4) {
   background-position-x: -165px;
 }
-footer.partner ul.content li span:hover {
+body footer.partner ul.content li span:hover {
   opacity: 0.6;
 }
-footer.partner ul.content li b {
+body footer.partner ul.content li b {
   margin-left: 20px;
   cursor: pointer;
   font-weight: normal;
 }
-footer.partner ul.content li a {
+body footer.partner ul.content li a {
   color: aqua;
 }
-footer.partner ul.content li a:hover {
+body footer.partner ul.content li a:hover {
   border-bottom: 1px solid aqua;
 }
 /*# sourceMappingURL=./style.css.map */

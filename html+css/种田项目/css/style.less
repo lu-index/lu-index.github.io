@@ -24,6 +24,8 @@ li {
 	display: block;
 }
 /* 头部样式--seart */
+body{
+
 header.bg {
 	background: url(../images/banner.jpg) no-repeat;
 	background-size: cover;
@@ -101,23 +103,67 @@ header.bg {
 			font-size: 4.5em;
 			font-weight: normal;
 			color: white;
+			transition: all 1.5s;
+			// transform: scale(0);
+			&.active{
+				transform: scale(1)
+			}
 			a{
 				color: white;
-			}
+			}	
 		}
+		
 	}
 	ul.grid {
 		width: 1140px;
-		margin: 0 auto;
+		margin:0px auto;
 		position: relative;
-		overflow: hidden;
-		top: 130px;
+		top: 120px;
 		left: 0;
-
+		&::after{
+			content:'';
+			clear: both;
+			display: block;
+		}
 		li {
 			width: 25%;
 			float: left;
 			text-align: center;
+			transition:  all 1s;
+			position: relative;
+			&:nth-child(1){
+				position: relative;
+				top:0px;
+				left:-500px;	
+				&.active{					
+					left:0px;
+				}
+			}
+			&:nth-child(2){
+				position: relative;
+				top: -1000px;
+				left: 0;
+				&.active{
+					top: 0px;
+				}
+			}
+			&:nth-child(3){
+				position: relative;
+				bottom: -500px;
+				left: 0;
+				&.active{
+					bottom: 0px;
+				}
+			}
+			&:nth-child(4){
+				position: relative;
+				top:0px;
+				right: -500px;
+				&.active{
+					right: 0px;
+				}
+			}
+		
 			.card {
 				background: #16a667;
 				margin: 0 14px;
@@ -152,27 +198,47 @@ header.bg {
 	height: 500px;
 	margin: 0 auto;
 	margin-top: 180px;
+	
 	// background: #16a667;
 	h3 {
 		font-size: 36px;
+		width: 460px;
+		transition: all 1.5s;
+			transform: scale(0);
+		&.active{
+			transform: scale(1)
+		}
 	}
 	.inco {
-		height: 420px;
 		width: 460px;
 		line-height: 100px;
-		margin-top: 30px;
+		position: relative;
+		top: 0;
+		right: -1000px;
+		transition:  all 1.5s;
+		// margin-top: 30px;
 		img {
 			width: 430px;
+		}
+		&.active{
+           right: 0;
 		}
 	}
 	.font {
 		height: 400px;
 		width: 640px;
+		position: relative;
+		top: 0;
+		left: -1000px;
+		transition:  all 1.5s;
 		p {
 			font-size: 14px;
 			margin-top: 30px;
 			line-height: 1.8em;
 			color: #939393;
+		}
+		&.active{
+          left: 0;
 		}
 	}
 }
@@ -180,7 +246,7 @@ header.bg {
 	// .clear;
 	height: 450px;
 	width: 100%;
-	overflow: hidden;
+	// overflow: hidden;
 	background: #37353b;
 	// position: relative;
 	ul.service {
@@ -198,13 +264,43 @@ header.bg {
 			font-size: 36px;
 			color: white;
 			margin: 0 17px;
+			transition: all 1s;
+			transform: scale(0);
+			&.active{
+				transform: scale(1);
+			}
 		}
 
 		li {
 			text-align: center;
 			width: 350px;
 			float: left;
-			margin: 0 15px;
+			margin: 0 15px;	
+			transition: all 1s;	
+			&:nth-child(2){
+				position: relative;
+				top:0px;
+				left:-800px;	
+				&.active{					
+					left:0px;
+				}
+			}
+			&:nth-child(3){
+				position: relative;
+				bottom:-100px;
+				left:0px;	
+				&.active{					
+					bottom:0px;
+				}
+			}
+			&:nth-child(4){
+				position: relative;
+				right:-800px;
+				top: 0px;
+				&.active{					
+					right:0px;
+				}
+			}
 			.guide {
 				float: left;
 				padding: 1.5em 2em;
@@ -234,6 +330,11 @@ header.bg {
 .works {
 	background: #eeeeee;
 	height: 650px;
+	transform: scale(0);
+	transition: all 1.5s;
+	&.active{
+		transform: scale(1);
+	}
 	.content {
 		h3 {
 			width: 1140px;
@@ -290,16 +391,43 @@ header.bg {
 
 		ul {
 			width: 1140px;
-			margin: 0 auto;
-
+			margin-left: 30px;
 			li {
 				width: 31%;
 				float: left;
+				transition: all 1s;
+				
+				&:nth-child(1){
+					position: relative;
+					top: 0;
+					right: 0;
+					left: -850px;
+					&.active{
+						left: 0px;
+					}
+				}
+				&:nth-child(2){
+					transform: rotateY(0);
+					&.active{
+						transform:  rotateY(360deg)
+					}
+				}
+				&:nth-child(3){
+					position: relative;
+					top: 0;
+					right: 0;
+					right: -850px;
+					&.active{
+						right: 0;
+					}
+				}
 				.more {
 					float: left;
-					padding: 30px;
+					padding: 0 15px;
 					background: white;
+					
 					img {
+						width: 100%;
 					}
 					h4 {
 						padding: 8px 0;
@@ -357,13 +485,39 @@ header.bg {
 	height: 470px;
 	background: #3F454D;
 	ul.content {
-		width: 1140px;
-		margin: 0 auto;
-		padding: 0 0 0 50px;
-		
+		width: 1200px;
+		margin: 0 auto;	
 		li {
+			width: 300px;
 			float: left;
-				
+			padding-left: 80px;
+			transition: all 1s;
+			&:nth-child(1){
+				position: relative;
+					top: 0;
+					left: -800px;
+				transform: scale(0);
+				&.active{
+					left: 0;
+					transform: scale(1);
+				}
+			}
+			&:nth-child(2){
+				transform: scale(0);
+				&.active{
+					transform: scale(1);
+				}
+			}
+			&:nth-child(3){
+				position: relative;
+					top: 0;
+					right: -800px;
+				transform: scale(0);
+				&.active{
+					right: 0;
+					transform: scale(1)
+				}
+			}
 			.vote {
 				width: 380px;
 				height: 470px;
@@ -412,6 +566,10 @@ header.bg {
 						padding: 10px 24px;
 						color: #999999;
 						font-size: 12px;
+						position: relative;
+						left: 0;
+						top: 0;
+						transform: scale(1);
 						cursor: pointer;
 						&:hover {
 							color: orange;
@@ -456,12 +614,38 @@ header.bg {
 footer.partner {
 	width: 100%;
 	height: 220px;
+	padding-bottom: 30px;
 	ul.content {
 		width: 1140px;
 		margin: 0 auto;
 		li {
 			text-align: center;
 			line-height: 50px;
+			transition: all 1s;
+			&:nth-child(1){
+				position: relative;
+				top: 0;
+				left: -1200px;
+				&.active{
+					left: 0;
+				}
+			}
+			&:nth-child(2){
+				position: relative;
+				top: -50px;
+				left: 0px;
+				&.active{
+					top: 0;
+				}
+			}
+			&:nth-child(3){
+				position: relative;
+				right: -1200px;
+				top: 0;
+				&.active{
+					right: 0;
+				}
+			}
 			span {
 				display: inline-block;
 				width: 55px;
@@ -494,4 +678,5 @@ footer.partner {
 			}
 		}
 	}
+}
 }
