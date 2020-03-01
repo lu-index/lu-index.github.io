@@ -24,7 +24,7 @@
   - [HTNL5+CSS3 音乐播放器](https://lu-index.github.io/html5/music)
 ## VUE.js
   - [HTNL5+CSS3 Todo组件](https://lu-index.github.io/vue.js/Todo组件)
-  - [时潮音乐](https://lu-index.github.io/vue.js/music)
+  - [时潮音乐](https://lu-index.github.io/vue.js/dist)
   - [漫画世界](https://lu-index.github.io/vue.js/cartoon)
 ## 小程序
   
